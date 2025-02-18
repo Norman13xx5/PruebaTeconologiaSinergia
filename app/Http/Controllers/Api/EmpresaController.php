@@ -13,17 +13,6 @@ class EmpresaController extends Controller
     public function create(Request $request)
     {
         try {
-            // Obtener permisos del rol
-            $moduloId = 3;
-            $permissions = Permission::select('w')
-                ->where('rolId', Auth::user()->rolId)
-                ->where('moduloId', $moduloId)
-                ->first();
-            // Verificar si el permiso de edición está permitido
-            if (!$permissions || $permissions->w == 0) {
-                return response()->json(['message' => 'No tiene permisos para crear'], 403);
-            }
-
             $request->validate([
                 'nit' => 'required|numeric',
                 'digito' => 'required|numeric',

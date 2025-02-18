@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Typesid;
+use App\Models\Department;
+use App\Models\Municipality;
 use App\Models\Rol;
 use App\Models\TipoMaquinaria;
 use App\Models\Maquinaria;
 use App\Models\Contrato;
+use App\Models\Genre;
 use App\Models\Ruta;
 use App\Models\Material;
 use Illuminate\Support\Facades\Auth;
@@ -195,7 +198,72 @@ class SelectController extends Controller
     public function genreAll()
     {
         try {
-            $select = Typesid::select('id', 'nombre as description')->get();
+            $select = Genre::select('id', 'nombre as description')->get();
+
+            if ($select->isEmpty()) {
+                return response()->json(['message' => 'Registro no encontrado'], 404);
+            }
+            
+            $select = $select->map(function ($role) {
+                return [
+                    'name' => $role->description,
+                    'id' => $role->id,
+                ];
+            });
+            // dd($select);
+            return response()->json(['message' => 'Registro encontrado', 'data' => $select], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+    }
+    public function departmentAll()
+    {
+        try {
+            $select = Department::select('id', 'nombre as description')->get();
+
+            if ($select->isEmpty()) {
+                return response()->json(['message' => 'Registro no encontrado'], 404);
+            }
+            
+            $select = $select->map(function ($role) {
+                return [
+                    'name' => $role->description,
+                    'id' => $role->id,
+                ];
+            });
+            // dd($select);
+            return response()->json(['message' => 'Registro encontrado', 'data' => $select], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+    }
+
+    public function municipalitytAll()
+    {
+        try {
+            $select = Municipality::select('id', 'nombre as description')->get();
+
+            if ($select->isEmpty()) {
+                return response()->json(['message' => 'Registro no encontrado'], 404);
+            }
+            
+            $select = $select->map(function ($role) {
+                return [
+                    'name' => $role->description,
+                    'id' => $role->id,
+                ];
+            });
+            // dd($select);
+            return response()->json(['message' => 'Registro encontrado', 'data' => $select], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
+    }
+
+    public function municipality($id)
+    {
+        try {
+            $select = Municipality::select('id', 'nombre as description')->where('departamento_id', $id)->get();
 
             if ($select->isEmpty()) {
                 return response()->json(['message' => 'Registro no encontrado'], 404);

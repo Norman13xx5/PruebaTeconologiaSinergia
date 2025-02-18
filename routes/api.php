@@ -126,6 +126,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::controller(SelectController::class)->group(function () {
         Route::get('/select/typesids', 'typeidAll');
+        Route::get('/select/genres', 'genreAll');
+        Route::get('/select/departments', 'departmentAll');
+        Route::get('/select/municipalities', 'municipalitytAll');
+        Route::get('/select/municipality/{id}', 'municipality');
         Route::get('/select/roles', 'rolAll');
         Route::get('/select/category', 'categoryAll');
         Route::get('/select/tp-maquinarias', 'tpMaquinariaAll');
