@@ -4,7 +4,7 @@
 
 @section('content')
     <form id="frmLogin">
-        <x-InputBase login name="emailUser" type="email" label="Correo" placeholder="Ingresa tu email" required
+        <x-InputBase login name="emailUser" type="text" label="Usuario" placeholder="Ingresa tu usuario" required
             error="Falta Correo Electronico." help="Escribe tu email" max="191" />
         <x-InputBase login name="pswd" type="password" label="Contraseña" placeholder="Ingresa tu contraseña" required
             error="Falta contraseña." help="Escribe tu contraseña" max="191" />

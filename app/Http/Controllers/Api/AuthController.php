@@ -18,7 +18,7 @@ class AuthController extends Controller
                 'pswd' => 'required|string',
             ]);
 
-            $userLogin = User::where('emailUser', $request->emailUser)->first();
+            $userLogin = User::where('identificacion', $request->emailUser)->first();
 
             if (!$userLogin || !Hash::check($request->pswd, $userLogin->pswd)) {
                 return response()->json(['message' => 'Invalid credentials'], 401);

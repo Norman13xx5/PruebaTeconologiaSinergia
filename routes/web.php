@@ -3,18 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\web\RolController;
-use App\Http\Controllers\web\EmpresaController;
-use App\Http\Controllers\web\UserController;
-use App\Http\Controllers\web\ContratoController;
-use App\Http\Controllers\web\MaquinariaController;
-use App\Http\Controllers\web\MaterialController;
-use App\Http\Controllers\web\RutaController;
-use App\Http\Controllers\web\AcuerdoController;
-use App\Http\Controllers\web\RegistroController;
-use App\Http\Controllers\web\SalaryController;
-use App\Http\Controllers\web\CategoryController;
-use App\Http\Controllers\web\ExpenseController;
+use App\Http\Controllers\web\PatientController;
 
 
 Route::get('/', function () {
@@ -28,13 +17,6 @@ Route::middleware(['auth:sanctum', 'check.api.token'])->group(function () {
         return view('home/home');
     })->name('home');
 
-    // Route::get('/permisos/{rol}/{id}', function ($rol, $id) {
-    //     return view('cuentas/roles/permisos', compact('rol', 'id'));
-    // })->name('permisos');
-
-    // Route::get('/acuerdos', function () {
-    //     return view('operaciones/acuerdos/acuerdos');
-    // })->name('acuerdos');
-    Route::get('/pacientes', [EmpresaController::class, 'index'])->name('pacientes');
+    Route::get('/pacientes', [PatientController::class, 'index'])->name('pacientes');
 
 });

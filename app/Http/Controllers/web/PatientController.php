@@ -4,19 +4,27 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Material;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Patient;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
-class MaterialController extends Controller
+class PatientController extends Controller
 {
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Material::select(['id', 'nombre', 'descripcion', 'status'])
-                ->where('deleted_at', NULL)
-                ->where('nit', Auth::user()->nit);
-
+            $data = Patient::select([
+                'patients.id',
+                'typesids.nombre as tipo_documento',
+                'patients.numero_documento',
+                DB::raw("CONCAT(patients.nombre1, ' ', patients.nombre2, ' ', patients.apellido1, ' ', patients.apellido2) as nombre"),
+                'genres.nombre as genero',
+                'patients.status'
+            ])
+                ->join('typesids', 'typesids.id', '=', 'patients.tipo_documento_id')
+                ->join('genres', 'genres.id', '=', 'patients.genero_id')
+                ->whereNull('patients.deleted_at')
+                ->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->editColumn('status', function ($row) {
@@ -35,6 +43,7 @@ class MaterialController extends Controller
                 ->make(true);
         }
 
-        return view('operaciones/materiales/materiales');
+
+        return view('cuentas/pacientes/pacientes');
     }
 }
