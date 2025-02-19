@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RolController;
 use App\Http\Controllers\Api\EmpresaController;
+use App\Http\Controllers\Api\PatientController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ContratoController;
 use App\Http\Controllers\Api\MaquinariaController;
@@ -40,6 +41,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/empresas/{nit}', 'update');
         Route::patch('/empresas/{nit}', 'edit');
         Route::delete('/empresas/{nit}', 'destroy');
+    });
+
+    Route::controller(PatientController::class)->group(function () {
+        Route::post('/pacientes', 'create');
+        Route::get('/pacientes/{id}', 'show');
+        Route::put('/pacientes/{id}', 'update');
+        Route::patch('/pacientes/{id}', 'edit');
+        Route::delete('/pacientes/{id}', 'destroy');
     });
 
 

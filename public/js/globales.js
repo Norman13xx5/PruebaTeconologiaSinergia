@@ -221,7 +221,7 @@ const buildCreateRegister = async (route, form) => {
 }
 
 //Agregué modalId, formId
-const buildEditRegister = async (id, route, formFields, formSelects = [], file = false, modalId = "ModalRegistro", formId = "frmRegistro2") => {
+const buildEditRegister = async (id, route, formFields, formSelects = [], file = false, modalId = "ModalRegistro", formId = "frmRegistro") => {
     vars.edit = true;
     await $.ajax({
         dataType: "json",
@@ -404,7 +404,7 @@ const buildDeleteRegister = async (id, route) => {
 
 const buildSelectForm = async (route, campo, message) => {
     try {
-        $("#loader-container").fadeIn("slow");
+        // $("#loader-container").fadeIn("slow");
         const result = await $.ajax({
             dataType: "json",
             url: `${urlBase}${route}`,

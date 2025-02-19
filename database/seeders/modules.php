@@ -24,8 +24,8 @@ class modules extends Seeder
 
         Modulo::create(attributes: [
             'menuId' => 1, // Submódulo de Dashboard
-            'page' => 'empresas',
-            'titulo' => 'Empresas',
+            'page' => 'pacientes',
+            'titulo' => 'Pacientes',
             'icono' => null,
             'descripcion' => 'Administración empresas',
             'status' => 1,
