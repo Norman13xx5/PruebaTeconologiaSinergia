@@ -123,7 +123,7 @@
                     "municipio_id",
                 ], ["id", "tipo_documento_id", "numero_documento", "nombre1", "nombre2", "apellido1",
                     "apellido2", "genero_id", "departamento_id", "municipio_id"
-                ], true);
+                ]);
         }
 
         const statusRegistro = async (nit) => {
