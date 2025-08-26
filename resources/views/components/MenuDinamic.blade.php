@@ -10,7 +10,7 @@
 
                 @foreach ($module->subModulos as $submodule)
                     <li id="menu_{{ $submodule->page }}">
-                        <a href="{{ $_ENV['APP_URL'] . $submodule->page }}" title="{{ $submodule->descripcion }}"
+                        <a href="{{ env('APP_URL') . $submodule->page }}" title="{{ $submodule->descripcion }}"
                             data-filter-tags="{{ $submodule->titulo }}">
                             <span class="nav-link-text" data-i18n="nav.theme_settings_how_it_works">
                                 {{ $submodule->titulo }}

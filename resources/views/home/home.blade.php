@@ -14,7 +14,7 @@
                                 height="100" class="rounded-circle shadow-2 img-thumbnail" alt="">
                             <h5 class="mb-0 fw-700 text-center mt-3">
                                 BIENVENIDO A
-                                {{ $_ENV['APP_NAME'] }}®
+                                {{ env('APP_NAME') }}®
                                 <small class="text-muted mb-0">
                                     NIT:
                                     {{ Auth::user()->nit }}

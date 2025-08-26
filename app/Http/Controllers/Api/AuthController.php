@@ -17,12 +17,12 @@ class AuthController extends Controller
                 'emailUser' => 'required|string',
                 'pswd' => 'required|string',
             ]);
-
-            $userLogin = User::where('identificacion', $request->emailUser)->first();
+            $userLogin = User::where('emailUser', $request->emailUser)->first();
 
             if (!$userLogin || !Hash::check($request->pswd, $userLogin->pswd)) {
                 return response()->json(['message' => 'Invalid credentials'], 401);
             }
+            // dd($request->all());
 
             $token = $userLogin->createToken('auth_token')->plainTextToken;
 

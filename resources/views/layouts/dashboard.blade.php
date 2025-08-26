@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>
-        @yield('title') - {{ $_ENV['APP_NAME'] }}
+    @yield('title') - {{ env('APP_NAME') }}
     </title>
     <meta name="description" content="Introduction">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="url-global-app" content="{{ $_ENV['APP_URL'] }}">
+    <meta name="url-global-app" content="{{ env('APP_URL') }}">
     <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/vendors.bundle.css') }}">
     <link id='appbundle' rel='stylesheet' media='screen, print' href="{{ asset('css/app.bundle.css') }}">
     <link id='mytheme' rel='stylesheet' media='screen, print' href='#'>
@@ -35,7 +35,7 @@
                         class="page-logo-link press-scale-down d-flex align-items-center position-relative">
                         <img src="{{ asset('images/logo.png') }}" alt="TransTrackMaster" aria-roledescription="logo">
                         <span class="page-logo-text mr-1">
-                            {{ $_ENV['APP_NAME'] }}®
+                            {{ env('APP_NAME') }}®
                         </span>
                         <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
                     </a>
@@ -204,7 +204,7 @@
                 <footer class="page-footer" role="contentinfo">
                     <div class="d-flex align-items-center flex-1 text-muted">
                         <span class="hidden-md-down fw-700">
-                            {{ $_ENV['APP_NAME'] }}®
+                            {{ env('APP_NAME') }}®
                             {{ date('Y') }}
                         </span>
                     </div>

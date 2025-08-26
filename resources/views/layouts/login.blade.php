@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>
-        @yield('title') - <?= $_ENV['APP_NAME'] ?>
+    @yield('title') - {{ env('APP_NAME') }}
     </title>
     <meta name="description" content="Introduction">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="url-global-app" content="<?= $_ENV['APP_URL'] ?>">
+    <meta name="url-global-app" content="{{ env('APP_URL') }}">
     <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/vendors.bundle.css') }}">
     <link id="appbundle" rel="stylesheet" media="screen, print" href="{{ asset('css/app.bundle.css') }}">
     <link id="mytheme" rel="stylesheet" media="screen, print" href="#">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-dark m-4">
-                            <?= $_ENV['APP_NAME'] . '® ' . date('Y') ?>
+                            {{ env('APP_NAME') . '® ' . date('Y') }}
                         </div>
                     </div>
                 </div>
