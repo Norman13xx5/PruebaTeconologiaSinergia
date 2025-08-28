@@ -21,7 +21,7 @@ class users extends Seeder
             'aMaterno' => 'admin',
             'telefono' => '1111111111',
             'emailUser' => 'admin@example.com',
-            'pswd' => bcrypt('1234567890'),
+            'pswd' => bcrypt('password123'),
             'nombreFiscal' => 'admin S.A.S.',
             'direccionFiscal' => 'Calle 45',
             'contentType' => 'application/json',

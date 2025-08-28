@@ -43,8 +43,7 @@
                 <!-- BEGIN PRIMARY NAVIGATION -->
                 <nav id="js-primary-nav" class="primary-nav" role="navigation">
                     <div class="info-card">
-                        <img src="data:{{ Auth::user()->contentType }};base64,{{ Auth::user()->base64 }}"
-                            width="50" height="50" class="profile-image rounded-circle">
+                        <img src="/images/user01.png" width="50" height="50" class="profile-image rounded-circle" alt="Usuario">
                         <div class="info-card-text">
                             <a class="d-flex align-items-center text-white">
                                 <span class="text-truncate text-truncate-sm d-inline-block">
@@ -124,8 +123,7 @@
                         <div>
                             <a href="#" data-toggle="dropdown"
                                 class="header-icon d-flex align-items-center justify-content-center ml-2">
-                                <img src="data:{{ Auth::user()->contentType }};base64,{{ Auth::user()->base64 }}"
-                                    width="50" height="50" class="profile-image rounded-circle">
+                                <img src="/images/user01.png" width="50" height="50" class="profile-image rounded-circle" alt="Usuario">
                                 <span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">
                                     {{ Auth::user()->nombres }}
                                 </span>
@@ -135,8 +133,7 @@
                                 <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
                                     <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
                                         <span class="mr-2">
-                                            <img src="data:{{ Auth::user()->contentType }};base64,{{ Auth::user()->base64 }}"
-                                                width="50" height="50" class="profile-image rounded-circle">
+                                            <img src="/images/user01.png" width="50" height="50" class="profile-image rounded-circle" alt="Usuario">
                                         </span>
                                         <div class="info-card-text">
                                             <div class="fs-lg text-truncate text-truncate-lg">

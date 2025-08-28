@@ -32,7 +32,7 @@
                                     <img class="img-fluid mx-auto d-block" src="{{ asset('images/logo-login.png') }}"
                                         alt="VolApp">
                                     <small class="h3 fw-300 mt-2 mb-5 text-dark opacity-60 text-center">
-                                        <b>Prueba Técnica Brayan Guillermo Diaz Martinez<br>
+                                        <b><br>
                                             </b>
                                     </small>
                                 </h2>

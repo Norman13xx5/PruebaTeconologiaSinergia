@@ -10,8 +10,7 @@
                 <div class="row no-gutters row-grid">
                     <div class="col-12">
                         <div class="d-flex flex-column align-items-center justify-content-center p-4">
-                            <img src="data:{{ Auth::user()->contentType }};base64,{{ Auth::user()->base64 }}"" width="100"
-                                height="100" class="rounded-circle shadow-2 img-thumbnail" alt="">
+                            <img src="/images/user01.png" width="100" height="100" class="rounded-circle shadow-2 img-thumbnail" alt="Usuario">
                             <h5 class="mb-0 fw-700 text-center mt-3">
                                 BIENVENIDO A
                                 {{ env('APP_NAME') }}®
